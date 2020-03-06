@@ -27,7 +27,7 @@ function runAPI(){
  
     stringToSign = publicKey + ":" + method + ":" + route + ":" + future_unixtime;
     sig = CalculateSig(stringToSign, privateKey);
-    var url = 'http://cfac.byu.edu/wp.dev/gravityformsapi/' + route + '?api_key=' + publicKey + '&signature=' + sig + '&expires=' + future_unixtime;
+    var url = 'http://cfac.byu.edu/gravityformsapi/' + route + '?api_key=' + publicKey + '&signature=' + sig + '&expires=' + future_unixtime;
     $.get(url, function(data, textStatus)
     {
         //get the data from the api
